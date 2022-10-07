@@ -12,3 +12,9 @@ a native way to crop an image in the browser with CSS.
 - https://css-tricks.com/first-look-at-the-css-object-view-box-property/
 
 
+## Built with 
+- [Svelte](https://svelte.dev)
+- [Vite](https://vitejs.dev)
+- [CropperJS](https://github.com/fengyuanchen/cropperjs)
+
+
