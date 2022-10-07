@@ -17,6 +17,10 @@
 		 scaleY: 0
  };
 
+ function onCopy() {
+		 
+ }
+
 
  function initCropper() {
 		 const image = document.getElementById('image');
@@ -182,7 +186,7 @@
 				<p class="text-indigo-700 text-2xl bg-indigo-50 px-4 py-2 rounded">object-view-box: {ovb}	</p>
 				<div class="flex">
 				<input type="file" bind:this={input} on:change={onChange}  class="block bg-slate-500 text-white text-xl my-2 px-4 py-2 mx-auto  rounded hover:bg-slate-600">
-				<button class="block bg-indigo-500 text-white text-xl my-2 px-4 py-2 mx-auto  rounded hover:bg-indigo-600">Copy to Clipboard</button>
+				<button on:click={onCopy} class="block bg-indigo-500 text-white text-xl my-2 px-4 py-2 mx-auto  rounded hover:bg-indigo-600">Copy to Clipboard</button>
 				</div>
 		</div>
 		<div class="w-1/3 bg-white p-2 shadow rounded">
@@ -201,7 +205,7 @@
 						{#if showImage}
 						<img id="image" bind:this={image} src="unsplash.jpg" />
 						{:else}
-						<div class="flex items-center justify-center bg-white rounded shadow p-4 min-w-[640px] min-h-[640px]">
+						<div class="flex items-center justify-center bg-slate-100 rounded shadow p-4 min-w-[640px] min-h-[640px]">
 								Select an image
 						</div>
 						{/if}

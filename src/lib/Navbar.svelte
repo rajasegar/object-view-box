@@ -13,7 +13,7 @@
     <div class="lg:flex flex-grow items-center">
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-indigo-700 hover:opacity-75" href="#pablo">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-indigo-700 hover:opacity-75" href="https://github.com/rajasegar/object-view-box">
               Github
             </a>
           </li>
