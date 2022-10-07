@@ -17,8 +17,16 @@
 		 scaleY: 0
  };
 
- function onCopy() {
-		 
+ function onCopy(ev) {
+		 ev.target.disabled = true;
+		 document.getElementById('css-value').select();
+		document.execCommand('copy'); 
+		 ev.target.textContent = "Copied!!";
+		 setTimeout(() => {
+				 
+				ev.target.disabled = false;
+		 ev.target.textContent = "Copy to clipboard";
+		 }, 2000)
  }
 
 
@@ -183,10 +191,18 @@
 				<div class="flex gap-2">
 		<div class="p-4 shadow rounded bg-white w-2/3">
 								<p class="text-blue-700 mb-2 font-bold">CSS property:</p>
-				<p class="text-indigo-700 text-2xl bg-indigo-50 px-4 py-2 rounded">object-view-box: {ovb}	</p>
+				<textarea id="css-value" rows="1" class="w-full text-indigo-700 text-2xl bg-indigo-50 px-4 py-2 rounded">object-view-box: {ovb};</textarea>
 				<div class="flex">
-				<input type="file" bind:this={input} on:change={onChange}  class="block bg-slate-500 text-white text-xl my-2 px-4 py-2 mx-auto  rounded hover:bg-slate-600">
-				<button on:click={onCopy} class="block bg-indigo-500 text-white text-xl my-2 px-4 py-2 mx-auto  rounded hover:bg-indigo-600">Copy to Clipboard</button>
+						<input type="file" bind:this={input} on:change={onChange}  class="block my-2 text-sm text-slate-500
+												 file:mr-4 file:py-2 file:px-4
+												 file:rounded-full file:border-0
+												 file:text-xl file:font-semibold
+												 file:bg-indigo-50 file:text-indigo-700
+												 file:cursor-pointer
+												 hover:file:bg-indigo-100">
+				<button on:click={onCopy} class="block bg-indigo-500 text-white text-xl my-2 px-4 py-2 mx-auto
+								rounded hover:bg-indigo-600
+								disabled:bg-red-500 disabled:cursor-not-allowed">Copy to Clipboard</button>
 				</div>
 		</div>
 		<div class="w-1/3 bg-white p-2 shadow rounded">
