@@ -6,6 +6,7 @@
  import RadioLabel from './lib/RadioLabel.svelte';
 
  const DRAG_MODE_CROP = 'crop';
+ let myCropper = undefined;
  let ovb = 'inset()';
  let ovbType = 'xywh';
  let detail = {
@@ -32,7 +33,10 @@
 
  function initCropper() {
 		 const image = document.getElementById('image');
-		 const myCropper = new Cropper(image, {
+		 if(myCropper) {
+				 myCropper.destroy();
+		 }
+		 myCropper = new Cropper(image, {
 				 // The view mode of the cropper
 				 viewMode: 0, // 0, 1, 2, 3
 				 // The dragging mode of the cropper
