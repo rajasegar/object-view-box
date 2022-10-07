@@ -219,7 +219,7 @@
 		<main class="flex flex-row gap-4 p-4 mx-auto">
 				<div class="max-w-[640px] max-h-[640px] mx-auto my-4 overflow-scroll">
 						{#if showImage}
-						<img id="image" bind:this={image} src="unsplash.jpg" />
+						<img id="image" bind:this={image} />
 						{:else}
 						<div class="flex items-center justify-center bg-slate-100 rounded shadow p-4 min-w-[640px] min-h-[640px]">
 								Select an image
@@ -229,7 +229,7 @@
 				<div>
 												<div class="preview bg-white shadow rounded p-4">
 														{#if showImage}
-														<img id="ovb" bind:this={preview} src="unsplash.jpg" />
+														<img id="ovb" bind:this={preview} />
 														{:else}
 						<div class="bg-slate-100 rounded shadow p-4 flex items-center justify-center min-w-[500px] min-h-[500px]">
 								Image preview here
