@@ -26,6 +26,9 @@
  let placeholder;
  let showImage = false;
 
+ let naturalWidth;
+ let naturalHeight;
+
  function onCopy(ev) {
 		 ev.target.disabled = true;
 		 document.getElementById('css-value').select();
@@ -75,9 +78,13 @@
  }
 
  function updateOvb() {
-		 /* console.log("x: ", detail.x, "y: ", detail.y, "width: ", detail.scaleX, "height: ", detail.scaleY);  */
-		 const img = document.getElementById('ovb')
-		 const { naturalWidth, naturalHeight } = img;
+		 let img;
+		 
+		 if(isChrome) { 
+				img = document.getElementById('ovb')
+				naturalWidth = img.naturalWidth;
+				naturalHeight = img.naturalHeight;
+				}
 		 const { x,y,width, height } = detail;
 		 let _x, _y, _width, _height;
 		 let ovbValue = '';
@@ -111,7 +118,9 @@
 				 ovb = ovbValue;
 		 }
 
-		 img.style.objectViewBox = ovbValue;
+		 if(isChrome) {
+				 img.style.objectViewBox = ovbValue;
+		 }
 		 
  }
 
@@ -125,6 +134,13 @@
 
 				 const reader = new FileReader();
 				 reader.addEventListener("load", function () {
+						 if(!isChrome) {
+								const tempImg = document.createElement('img');
+						 tempImg.setAttribute("src", reader.result);
+						 console.log(tempImg.naturalWidth, tempImg.naturalHeight )
+						 naturalWidth = tempImg.naturalWidth;
+						 naturalHeight = tempImg.naturalHeight;
+						 }
 						 image.setAttribute("src", reader.result);
 						 if(isChrome) {
 								preview.setAttribute("src", reader.result);
