@@ -126,7 +126,9 @@
 				 const reader = new FileReader();
 				 reader.addEventListener("load", function () {
 						 image.setAttribute("src", reader.result);
-						 preview.setAttribute("src", reader.result);
+						 if(isChrome) {
+								preview.setAttribute("src", reader.result);
+						 }
 						initCropper();
 				 });
 				 reader.readAsDataURL(file);
