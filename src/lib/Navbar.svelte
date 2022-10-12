@@ -17,12 +17,12 @@
               Github
             </a>
           </li>
-					<!-- <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-indigo-700 hover:opacity-75" href="#pablo">
-              Profile
+					<li class="nav-item">
+							<a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-indigo-700 hover:opacity-75" href="https://drafts.csswg.org/css-images-4/#the-object-view-box">
+              Spec
             </a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
 							<a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-indigo-700 hover:opacity-75" href="#pablo">
 									Setting
 							</a>
